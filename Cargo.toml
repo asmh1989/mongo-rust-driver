@@ -1,5 +1,8 @@
 [package]
-authors = ["Saghm Rossi <saghmrossi@gmail.com>", "Patrick Freed <patrick.freed@mongodb.com>"]
+authors = [
+    "Saghm Rossi <saghmrossi@gmail.com>",
+    "Patrick Freed <patrick.freed@mongodb.com>",
+]
 description = "The official MongoDB driver for Rust"
 edition = "2018"
 documentation = "https://docs.rs/mongodb"
@@ -16,12 +19,20 @@ exclude = [
     ".evergreen/**",
     ".gitignore",
     "src/test/**",
-    "tests/**"
+    "tests/**",
 ]
 
 [features]
 default = ["tokio-runtime"]
-tokio-runtime = ["tokio/macros", "tokio/rt", "tokio/net", "tokio/rt-multi-thread", "tokio/time", "reqwest", "serde_bytes"]
+tokio-runtime = [
+    "tokio/macros",
+    "tokio/rt",
+    "tokio/net",
+    "tokio/rt-multi-thread",
+    "tokio/time",
+    "reqwest",
+    "serde_bytes",
+]
 async-std-runtime = ["async-std", "async-std/attributes"]
 sync = ["async-std-runtime"]
 
@@ -66,7 +77,7 @@ version = "0.3.0"
 default-features = false
 
 [dependencies.reqwest]
-version = "0.10.6"
+version = "0.11.0"
 optional = true
 default-features = false
 features = ["json", "rustls-tls"]
